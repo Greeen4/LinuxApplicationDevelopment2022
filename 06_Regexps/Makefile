@@ -13,8 +13,8 @@ test1: esub
 	diff sed1_res esub1_res
 
 test2: esub
-	echo 'string' | sed -E 's/(r)(.*)(g)/\\\3->\2<-g\\\1 \0/' > sed2_res
-	./esub '(r)(.*)(g)' '\\\3->\2<-g\\\1 \0' 'string' > esub2_res
+	echo 'testing regex data' | sed -E 's/(x)(.*)a/\\+kkk-lll*_*miu\\\1 \2/' > sed2_res
+	./esub '(x)(.*)a' '\\\+kkk-lll*_*miu\\\1 \2' 'testing regex data' > esub2_res
 	diff sed2_res esub2_res
 
 test: test1 test2
